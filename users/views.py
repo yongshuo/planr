@@ -22,6 +22,7 @@ def dashboard(request):
         return redirect('/login/')
     
     context['TAB'] = 'DASHBOARD'
+    context['EMAIL'] = request.session['EMAIL'] if request.session.has_key('EMAIL') else None
     
     return render_to_response(
         'dashboard/dashboard.html',
