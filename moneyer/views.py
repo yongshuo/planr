@@ -9,6 +9,7 @@ import json
 from django.http import HttpResponse
 from datetime import datetime, timedelta
 from config import settings
+from decimal import Decimal
 
 def moneyer(request):
     context = {}
@@ -188,3 +189,72 @@ def delete_moneyer(request):
     return HttpResponse(json.dumps(return_data), content_type = 'application/json')
     
     
+def load_dashboard_pie(request):
+    if request.session.has_key('EMAIL') == False:
+        return redirect('/login/')
+    
+    import random
+    r = lambda: random.randint(0,255)
+
+    total_amount, details = Decimal(0.0), []
+    
+    try:
+        entity_login = EntityLogin.objects.get(email = request.session['EMAIL'])
+    except Exception as e:
+        raise Exception(e.args[0])
+    else:    
+        for c in Moneyer.MONEY_CATEGORY:
+            amount = Decimal(0.0)
+            for m in Moneyer.objects.filter(owner = entity_login, money_category = c[0]):
+                amount += m.credit
+                amount += m.debit
+                total_amount += m.credit
+                total_amount += m.debit
+            
+            details.append({
+                'value' : amount,
+                'category' : c[1].encode('UTF-8'),
+                'color' : '#%02X%02X%02X' % (r(),r(),r())
+            })
+    
+    new_data = []
+    for d in details:
+        new_data.append({
+            'value' : str(round((d['value'] / total_amount), 2)),
+            'category' : d['category'],
+            'color' : d['color'],
+        })
+    
+    return_data = {'details' : new_data}
+    
+    return HttpResponse(json.dumps(return_data), content_type = 'application/json')
+    
+def load_dashboard_line(request):
+    
+    if request.session.has_key('EMAIL') == False:
+        return redirect('/login/')
+
+    try:
+        entity_login = EntityLogin.objects.get(email = request.session['EMAIL'])
+    except Exception as e:
+        raise Exception(e.args[0])
+    else:
+        list_value = []
+        list_date = []
+        
+        i = 13
+        while i >= 0:
+            money  = Decimal(0.0)
+            date = datetime.today() - timedelta(days = i)
+            for m  in Moneyer.objects.filter(owner = entity_login, create_date__lte = date):
+                money += m.credit
+                money -= m.debit
+            
+            list_value.append(str(money))
+            list_date.append(datetime.strftime(date, '%Y-%m-%d'))
+            
+            i -= 1
+        
+        return_data = {'value_list' : list_value, 'date_list' : list_date}
+    
+    return HttpResponse(json.dumps(return_data), content_type = 'application/json')

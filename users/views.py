@@ -15,6 +15,20 @@ def index(request):
         context_instance = RequestContext(request)
     )
 
+def dashboard(request):
+    context = {}
+    
+    if request.session.has_key('EMAIL') == False:
+        return redirect('/login/')
+    
+    context['TAB'] = 'DASHBOARD'
+    
+    return render_to_response(
+        'dashboard/dashboard.html',
+        context,
+        context_instance = RequestContext(request)
+    )
+
 def change_language_ajax(request):
     
     lang = request.POST.get('lang','en')
@@ -51,7 +65,7 @@ def register_action(request):
     rpassword = request.POST.get('rpassword', None)
     
     if not email:
-        request.session['REGISTER_ERROR'] = 'Please provide email !'
+        request.session['REGISTER_ERROR'] = ugettext_lazy('Please provide email !').encode('utf-8')
         return redirect('/register/')
     
     if not password or not rpassword:
@@ -59,7 +73,7 @@ def register_action(request):
         return render_to_response('users/register.html',context, context_instance = RequestContext(request))
 
     if password != rpassword:
-        request.session['REGISTER_ERROR'] = 'Password does not match !'
+        request.session['REGISTER_ERROR'] = ugettext_lazy('Password does not match !').encode('utf-8')
         return redirect('/register/')
     
     try:
@@ -72,11 +86,11 @@ def register_action(request):
             equest.session['REGISTER_ERROR'] = e.args[0]
             return redirect('/register/')
         
-        request.session['REGISTER_SUCCESS'] = 'Register successfully! you can login now .'
+        request.session['REGISTER_SUCCESS'] = ugettext_lazy('Register successfully! you can login now .').encode('utf-8')
         return redirect('/login/')
     else:
         if entity_login:
-            request.session['REGISTER_ERROR'] = 'Email already in use, please choose another one !'
+            request.session['REGISTER_ERROR'] = ugettext_lazy('Email already in use, please choose another one !').encode('utf-8')
             return redirect('/register/')
         
 def login(request):
@@ -103,26 +117,26 @@ def login_action(request):
     password = request.POST.get('password', None)
     
     if not email:
-        request.session['LOGIN_ERROR'] = 'Please provide email !'
+        request.session['LOGIN_ERROR'] = ugettext_lazy('Please provide email !').encode('utf-8')
         return redirect('/login/')
     
     if not password:
-        request.session['LOGIN_ERROR'] = 'Please provide password !'
+        request.session['LOGIN_ERROR'] = ugettext_lazy('Please provide password !').encode('utf-8')
         return redirect('/login/')
     
     try:
         entity_login = EntityLogin.objects.get(email = email)
     except Exception as e:
-        request.session['LOGIN_ERROR'] = 'Login failed, invalid email or password!'
+        request.session['LOGIN_ERROR'] = ugettext_lazy('Login failed, invalid email or password!').encode('utf-8')
         return redirect('/login/')
     
     else:
         if entity_login.verify_password(password) == False:
-            request.session['LOGIN_ERROR'] = 'Login failed, invalid email or password!'
+            request.session['LOGIN_ERROR'] = ugettext_lazy('Login failed, invalid email or password!').encode('utf-8')
             return redirect('/login/')
         else:
             request.session['EMAIL'] = email
-            return redirect('/account/')
+            return redirect('/dashboard/')
 
 def logout(request):
     if request.session.has_key('EMAIL'):
@@ -188,6 +202,6 @@ def update_account(request):
         
         request.session['EMAIL'] = email
         
-        request.session['UPDATEACCOUNT_SUCCESS'] = 'Account details updated successfully!'
+        request.session['UPDATEACCOUNT_SUCCESS'] = ugettext_lazy('Account details updated successfully!').encode('utf-8')
         return redirect('/account/')
         

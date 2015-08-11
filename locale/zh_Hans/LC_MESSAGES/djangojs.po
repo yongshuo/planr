@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-10 13:39+0800\n"
+"POT-Creation-Date: 2015-08-12 00:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -144,7 +144,7 @@ msgstr ""
 
 #: static/admin/js/admin/DateTimeShortcuts.js:156
 #: static/admin/js/admin/DateTimeShortcuts.js:276
-#: static/js/moneyer/moneyer.js:75
+#: static/js/moneyer/moneyer.js:96
 msgid "Cancel"
 msgstr "取消"
 
@@ -184,40 +184,69 @@ msgstr ""
 msgid "Hide"
 msgstr "隐藏"
 
-#: static/js/moneyer/moneyer.js:61
-msgid "Add a record"
-msgstr "添加一个记录"
+#: static/js/dashboard/moneyer.js:42
+msgid "Your money category PIE chart"
+msgstr "您金额分类的饼状图"
 
-#: static/js/moneyer/moneyer.js:63 static/js/scheduler/scheduler.js:113
+#: static/js/dashboard/moneyer.js:84
+msgid "Your money balance line chart for recent 14 days"
+msgstr "您最近十四天余额的折线图"
+
+#: static/js/dashboard/moneyer.js:97
+
+msgid "Balance"
+msgstr "余额"
+
+#: static/js/dashboard/scheduler.js:52 static/js/moneyer/moneyer.js:83
+#: static/js/scheduler/scheduler.js:113
 msgid "Category"
 msgstr "类别"
 
-#: static/js/moneyer/moneyer.js:64
+#: static/js/dashboard/scheduler.js:53 static/js/scheduler/scheduler.js:125
+msgid "Title"
+msgstr "标题"
+
+#: static/js/dashboard/scheduler.js:54 static/js/scheduler/scheduler.js:126
+msgid "Start"
+msgstr "开始"
+
+#: static/js/dashboard/scheduler.js:55 static/js/scheduler/scheduler.js:127
+msgid "End"
+msgstr "结束"
+
+#: static/js/dashboard/scheduler.js:56 static/js/scheduler/scheduler.js:129
+msgid "Description"
+msgstr "描述"
+
+#: static/js/moneyer/moneyer.js:81
+msgid "Add a record"
+msgstr "添加一个记录"
+
+#: static/js/moneyer/moneyer.js:84
 msgid "Credit"
 msgstr "收入"
 
-#: static/js/moneyer/moneyer.js:65
+#: static/js/moneyer/moneyer.js:85
 msgid "Debit"
 msgstr "支出"
 
-#: static/js/moneyer/moneyer.js:66
+#: static/js/moneyer/moneyer.js:86
 msgid "Date"
 msgstr "日期"
 
-#: static/js/moneyer/moneyer.js:67
+#: static/js/moneyer/moneyer.js:87
 msgid "Remarks"
 msgstr "备注"
 
-#: static/js/moneyer/moneyer.js:73 static/js/scheduler/scheduler.js:135
+#: static/js/moneyer/moneyer.js:94 static/js/scheduler/scheduler.js:135
 msgid "Edit"
 msgstr "编辑"
 
-#: static/js/moneyer/moneyer.js:74
+#: static/js/moneyer/moneyer.js:95
 msgid "Update"
 msgstr "更新"
 
-#: static/js/moneyer/moneyer.js:78
-
+#: static/js/moneyer/moneyer.js:99
 msgid "Delete"
 msgstr "删除"
 
@@ -301,25 +330,9 @@ msgstr "你确定编辑循环事件吗？"
 msgid "Are you sure the delete the recurrence event ?"
 msgstr "你确定删除循环事件吗？"
 
-#: static/js/scheduler/scheduler.js:125
-msgid "Title"
-msgstr "标题"
-
-#: static/js/scheduler/scheduler.js:126
-msgid "Start"
-msgstr "开始"
-
-#: static/js/scheduler/scheduler.js:127
-msgid "End"
-msgstr "结束"
-
 #: static/js/scheduler/scheduler.js:128
 msgid "allDayEvent"
 msgstr "全天事件"
-
-#: static/js/scheduler/scheduler.js:129
-msgid "Description"
-msgstr "描述"
 
 #: static/js/scheduler/scheduler.js:130
 msgid "Repeat"

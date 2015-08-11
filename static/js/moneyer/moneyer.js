@@ -49,7 +49,7 @@ function load_moneyer(){
                     date: {type: "date"},
                     credit: { type: "number", default: "0" , validation: { min: 0}},
                     debit: {type: "number",  default: "0" ,validation: {  min: 0}},
-                    remarks: "remarks",
+                    remarks: {from: "remarks", default: ""},
                 }
             }
         },
@@ -76,7 +76,7 @@ function load_moneyer(){
     
     $("#moneyer").kendoGrid({
         dataSource: dataSource,
-        pageable: true,
+        pageable: false,
         height: 550,
         toolbar: [{name:"create", text: gettext("Add a record")}],
         columns: [

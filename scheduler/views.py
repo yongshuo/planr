@@ -181,8 +181,8 @@ def create_events_ajax(request):
         raise Exception(e.args[0])
     else:
         if data_dict['isAllDay'] == True: 
-            start_date = datetime.strptime(data_dict['start'].split('T')[0],'%Y-%m-%d') - timedelta(minutes = int(tz))
-            end_date = datetime.strptime(data_dict['end'].split('T')[0], '%Y-%m-%d') - timedelta(minutes = int(tz))
+            start_date = (datetime.strptime(data_dict['start'], '%Y-%m-%dT%H:%M:00.000Z') - timedelta(minutes = int(tz))).date()
+            end_date = (datetime.strptime(data_dict['end'], '%Y-%m-%dT%H:%M:00.000Z') - timedelta(minutes = int(tz))).date()
             start_date_time, end_date_time = None, None
         else:
             start_date_time = datetime.strptime(data_dict['start'], '%Y-%m-%dT%H:%M:00.000Z') - timedelta(minutes = int(tz))
@@ -271,4 +271,42 @@ def delete_event_ajax(request):
         
     return_data = {}
     
+    return HttpResponse(json.dumps(return_data), content_type = 'application/json')
+
+def load_event_dashboard(request):
+    if request.session.has_key('EMAIL') == False:
+        return redirect('/login/')
+
+    tz = request.POST.get('tz', '-480')
+    
+    details, return_data = [], {}
+    
+    try:
+        entity_login = EntityLogin.objects.get(email = request.session['EMAIL'])
+    except Exception as e:
+        raise Exception(e.args[0])
+    else:
+        category = Category.objects.filter(owner = entity_login)
+        
+        for c in category:
+            events = Event.objects.filter(category = c)
+            for e in events:
+                
+                if e.isAllDay == True and datetime.strftime(e.start_date, '%d/%m/%Y') != datetime.strftime(datetime.today(), '%d/%m/%Y'):
+                    continue
+                
+                if e.isAllDay == False and datetime.strftime(e.start_date_time, '%d/%m/%Y') != datetime.strftime(datetime.today(), '%d/%m/%Y'):
+                    continue
+        
+                details.append({
+                    'eventID' : str(e.id),
+                    'title' : e.title,
+                    'start' : datetime.strftime(e.start_date,'%Y-%m-%d') if e.isAllDay else datetime.strftime(e.start_date_time.replace(tzinfo = settings.TZ_INFO) - timedelta(minutes = int(tz)), '%Y-%m-%d %I:%M %p'),
+                    'end' : datetime.strftime(e.to_date,'%Y-%m-%d') if e.isAllDay else datetime.strftime(e.to_date_time.replace(tzinfo = settings.TZ_INFO) - timedelta(minutes = int(tz)), '%Y-%m-%d %I:%M %p'),
+                    'description' : e.description,
+                    'category' : str(e.category.name),
+                })
+                
+        return_data['details'] = details
+        
     return HttpResponse(json.dumps(return_data), content_type = 'application/json')

@@ -39,6 +39,10 @@ urlpatterns = [
     url(r'^create_moneyer/$', 'moneyer.views.create_moneyer'),
     url(r'^update_moneyer/$', 'moneyer.views.update_moneyer'),
     url(r'^delete_moneyer/$', 'moneyer.views.delete_moneyer'),
+    url(r'^dashboard/$', 'users.views.dashboard'),
+    url(r'^load_event_dashboard/$', 'scheduler.views.load_event_dashboard'),
+    url(r'^load_dashboard_pie/$', 'moneyer.views.load_dashboard_pie'),
+    url(r'^load_dashboard_line/$', 'moneyer.views.load_dashboard_line'),
 ]
 
 if settings.DEBUG == False:

@@ -1,0 +1,46 @@
+{% extends '_base.html' %}
+
+{% load i18n %}
+{% load static from staticfiles %}
+
+{% block title %}
+    {% trans 'Dashboard' %}
+{% endblock %}
+
+{% block pagejs %}
+    <script type="text/javascript" src="{% static 'js/dashboard/scheduler.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/dashboard/moneyer.js' %}"></script>
+{% endblock %}
+
+{% block main_content %}
+    <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
+        <ul id="myTabs" class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#event" id="event-tab" role="tab" data-toggle="tab" aria-controls="event" aria-expanded="true">{% trans 'Today Events' %}</a></li>
+          <li role="presentation" class=""><a href="#money" role="tab" id="money-tab" data-toggle="tab" aria-controls="money" aria-expanded="false">{% trans 'My Money' %}</a></li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="event" aria-labelledby="event-tab">
+                <div class="alert-danger" role="alert" style="display: none;margin-top:5px;" id="dashboard_event">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">{% trans 'Error' %}:</span>
+                    <span class="errormsg"></span>
+                </div>
+                <div id="my_events">
+                    
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="money" aria-labelledby="money-tab">
+                <div class="alert-danger" role="alert" style="display: none;margin-top:5px;" id="money_dashboard">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">{% trans 'Error' %}:</span>
+                    <span class="errormsg"></span>
+                </div>
+                <div id="dashboard_pie">
+                </div>
+                <br/><hr/>
+                <div id="dashboard_linechart"></div>
+            </div>
+            
+        </div>
+  </div>
+{% endblock %}
