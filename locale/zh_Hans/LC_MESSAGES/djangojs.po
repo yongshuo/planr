@@ -1,0 +1,440 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-10 13:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: static/admin/js/SelectFilter2.js:45
+#, javascript-format
+msgid "Available %s"
+msgstr ""
+
+#: static/admin/js/SelectFilter2.js:46
+#, javascript-format
+msgid ""
+"This is the list of available %s. You may choose some by selecting them in "
+"the box below and then clicking the \"Choose\" arrow between the two boxes."
+msgstr ""
+
+#: static/admin/js/SelectFilter2.js:53
+#, javascript-format
+msgid "Type into this box to filter down the list of available %s."
+msgstr ""
+
+#: static/admin/js/SelectFilter2.js:57
+msgid "Filter"
+msgstr ""
+
+#: static/admin/js/SelectFilter2.js:61
+msgid "Choose all"
+msgstr ""
+
+#: static/admin/js/SelectFilter2.js:61
+#, javascript-format
+msgid "Click to choose all %s at once."
+msgstr ""
+
+#: static/admin/js/SelectFilter2.js:67
+msgid "Choose"
+msgstr ""
+
+#: static/admin/js/SelectFilter2.js:69
+msgid "Remove"
+msgstr ""
+
+#: static/admin/js/SelectFilter2.js:75
+#, javascript-format
+msgid "Chosen %s"
+msgstr ""
+
+#: static/admin/js/SelectFilter2.js:76
+#, javascript-format
+msgid ""
+"This is the list of chosen %s. You may remove some by selecting them in the "
+"box below and then clicking the \"Remove\" arrow between the two boxes."
+msgstr ""
+
+#: static/admin/js/SelectFilter2.js:80
+msgid "Remove all"
+msgstr ""
+
+#: static/admin/js/SelectFilter2.js:80
+#, javascript-format
+msgid "Click to remove all chosen %s at once."
+msgstr ""
+
+#: static/admin/js/actions.js:22 static/admin/js/actions.min.js:1
+msgid "%(sel)s of %(cnt)s selected"
+msgid_plural "%(sel)s of %(cnt)s selected"
+msgstr[0] ""
+msgstr[1] ""
+
+#: static/admin/js/actions.js:114 static/admin/js/actions.min.js:4
+msgid ""
+"You have unsaved changes on individual editable fields. If you run an "
+"action, your unsaved changes will be lost."
+msgstr ""
+
+#: static/admin/js/actions.js:126 static/admin/js/actions.min.js:5
+msgid ""
+"You have selected an action, but you haven't saved your changes to "
+"individual fields yet. Please click OK to save. You'll need to re-run the "
+"action."
+msgstr ""
+
+#: static/admin/js/actions.js:128 static/admin/js/actions.min.js:5
+msgid ""
+"You have selected an action, and you haven't made any changes on individual "
+"fields. You're probably looking for the Go button rather than the Save "
+"button."
+msgstr ""
+
+#: static/admin/js/admin/DateTimeShortcuts.js:79
+#, javascript-format
+msgid "Note: You are %s hour ahead of server time."
+msgid_plural "Note: You are %s hours ahead of server time."
+msgstr[0] ""
+msgstr[1] ""
+
+#: static/admin/js/admin/DateTimeShortcuts.js:87
+#, javascript-format
+msgid "Note: You are %s hour behind server time."
+msgid_plural "Note: You are %s hours behind server time."
+msgstr[0] ""
+msgstr[1] ""
+
+#: static/admin/js/admin/DateTimeShortcuts.js:114
+#: static/admin/js/admin/DateTimeShortcuts.js:149
+msgid "Now"
+msgstr ""
+
+#: static/admin/js/admin/DateTimeShortcuts.js:118
+msgid "Clock"
+msgstr ""
+
+#: static/admin/js/admin/DateTimeShortcuts.js:146
+msgid "Choose a time"
+msgstr ""
+
+#: static/admin/js/admin/DateTimeShortcuts.js:150
+msgid "Midnight"
+msgstr ""
+
+#: static/admin/js/admin/DateTimeShortcuts.js:151
+msgid "6 a.m."
+msgstr ""
+
+#: static/admin/js/admin/DateTimeShortcuts.js:152
+msgid "Noon"
+msgstr ""
+
+#: static/admin/js/admin/DateTimeShortcuts.js:156
+#: static/admin/js/admin/DateTimeShortcuts.js:276
+#: static/js/moneyer/moneyer.js:75
+msgid "Cancel"
+msgstr "取消"
+
+#: static/admin/js/admin/DateTimeShortcuts.js:216
+#: static/admin/js/admin/DateTimeShortcuts.js:269
+msgid "Today"
+msgstr "今天"
+
+#: static/admin/js/admin/DateTimeShortcuts.js:220
+msgid "Calendar"
+msgstr ""
+
+#: static/admin/js/admin/DateTimeShortcuts.js:267
+msgid "Yesterday"
+msgstr "昨天"
+
+#: static/admin/js/admin/DateTimeShortcuts.js:271
+msgid "Tomorrow"
+msgstr "明天"
+
+#: static/admin/js/calendar.js:8
+msgid ""
+"January February March April May June July August September October November "
+"December"
+msgstr ""
+
+#: static/admin/js/calendar.js:9
+msgid "S M T W T F S"
+msgstr ""
+
+#: static/admin/js/collapse.js:8 static/admin/js/collapse.js:19
+#: static/admin/js/collapse.min.js:1
+msgid "Show"
+msgstr ""
+
+#: static/admin/js/collapse.js:16 static/admin/js/collapse.min.js:1
+msgid "Hide"
+msgstr "隐藏"
+
+#: static/js/moneyer/moneyer.js:61
+msgid "Add a record"
+msgstr "添加一个记录"
+
+#: static/js/moneyer/moneyer.js:63 static/js/scheduler/scheduler.js:113
+msgid "Category"
+msgstr "类别"
+
+#: static/js/moneyer/moneyer.js:64
+msgid "Credit"
+msgstr "收入"
+
+#: static/js/moneyer/moneyer.js:65
+msgid "Debit"
+msgstr "支出"
+
+#: static/js/moneyer/moneyer.js:66
+msgid "Date"
+msgstr "日期"
+
+#: static/js/moneyer/moneyer.js:67
+msgid "Remarks"
+msgstr "备注"
+
+#: static/js/moneyer/moneyer.js:73 static/js/scheduler/scheduler.js:135
+msgid "Edit"
+msgstr "编辑"
+
+#: static/js/moneyer/moneyer.js:74
+msgid "Update"
+msgstr "更新"
+
+#: static/js/moneyer/moneyer.js:78
+
+msgid "Delete"
+msgstr "删除"
+
+#: static/js/scheduler/scheduler.js:99
+msgid "today"
+msgstr "今天"
+
+#: static/js/scheduler/scheduler.js:100
+msgid "save"
+msgstr "保存"
+
+#: static/js/scheduler/scheduler.js:101
+msgid "cancel"
+msgstr "取消"
+
+#: static/js/scheduler/scheduler.js:102
+msgid "destory"
+msgstr "删除"
+
+#: static/js/scheduler/scheduler.js:103
+msgid "event"
+msgstr "事件"
+
+#: static/js/scheduler/scheduler.js:104
+msgid "date"
+msgstr "日期"
+
+#: static/js/scheduler/scheduler.js:105
+msgid "time"
+msgstr "时间"
+
+#: static/js/scheduler/scheduler.js:106
+msgid "allDay"
+msgstr "全天"
+
+#: static/js/scheduler/scheduler.js:108
+msgid "day"
+msgstr "天"
+
+#: static/js/scheduler/scheduler.js:109
+msgid "week"
+msgstr "周"
+
+#: static/js/scheduler/scheduler.js:110
+msgid "month"
+msgstr "月"
+
+#: static/js/scheduler/scheduler.js:111
+msgid "agenda"
+msgstr "议程"
+
+#: static/js/scheduler/scheduler.js:115
+msgid "Delete Event"
+msgstr "删除事件"
+
+#: static/js/scheduler/scheduler.js:116
+msgid "Delete ocurrence event"
+msgstr "删除当前事件"
+
+#: static/js/scheduler/scheduler.js:117
+msgid "Delete whole serial"
+msgstr "删除循环事件"
+
+#: static/js/scheduler/scheduler.js:118
+msgid "Edit Event"
+msgstr "编辑事件"
+
+#: static/js/scheduler/scheduler.js:119
+msgid "Edit ocurrence event"
+msgstr "编辑当前事件"
+
+#: static/js/scheduler/scheduler.js:120
+msgid "Edit whole serial"
+msgstr "编辑整个系列"
+
+#: static/js/scheduler/scheduler.js:121
+msgid "Are you sure to edit the recurrence ?"
+msgstr "你确定编辑循环事件吗？"
+
+#: static/js/scheduler/scheduler.js:122
+msgid "Are you sure the delete the recurrence event ?"
+msgstr "你确定删除循环事件吗？"
+
+#: static/js/scheduler/scheduler.js:125
+msgid "Title"
+msgstr "标题"
+
+#: static/js/scheduler/scheduler.js:126
+msgid "Start"
+msgstr "开始"
+
+#: static/js/scheduler/scheduler.js:127
+msgid "End"
+msgstr "结束"
+
+#: static/js/scheduler/scheduler.js:128
+msgid "allDayEvent"
+msgstr "全天事件"
+
+#: static/js/scheduler/scheduler.js:129
+msgid "Description"
+msgstr "描述"
+
+#: static/js/scheduler/scheduler.js:130
+msgid "Repeat"
+msgstr "重复"
+
+#: static/js/scheduler/scheduler.js:131
+msgid "Timezone"
+msgstr ""
+
+#: static/js/scheduler/scheduler.js:132
+msgid "Start Timezone"
+msgstr ""
+
+#: static/js/scheduler/scheduler.js:133
+msgid "End Timezone"
+msgstr ""
+
+#: static/js/scheduler/scheduler.js:134
+msgid "Separate Timezone"
+msgstr ""
+
+#: static/js/scheduler/scheduler.js:139
+msgid "Never"
+msgstr "从不"
+
+#: static/js/scheduler/scheduler.js:140
+msgid "Daily"
+msgstr "每天"
+
+#: static/js/scheduler/scheduler.js:141
+msgid "Weekly"
+msgstr "每周"
+
+#: static/js/scheduler/scheduler.js:142
+msgid "Monthly"
+msgstr "每月"
+
+#: static/js/scheduler/scheduler.js:143
+msgid "Yearly"
+msgstr "每年"
+
+#: static/js/scheduler/scheduler.js:146
+msgid "Repeat every day"
+msgstr "每天重复"
+
+#: static/js/scheduler/scheduler.js:147
+msgid "days"
+msgstr "天"
+
+#: static/js/scheduler/scheduler.js:150
+msgid "Weeks"
+msgstr "周"
+
+#: static/js/scheduler/scheduler.js:151 static/js/scheduler/scheduler.js:155
+#: static/js/scheduler/scheduler.js:161
+msgid "Repeat every"
+msgstr "重复(每)"
+
+#: static/js/scheduler/scheduler.js:152 static/js/scheduler/scheduler.js:156
+#: static/js/scheduler/scheduler.js:162
+msgid "Repeat on"
+msgstr "重复"
+
+#: static/js/scheduler/scheduler.js:157
+msgid "Months"
+msgstr "月"
+
+#: static/js/scheduler/scheduler.js:158
+msgid "Day"
+msgstr "日"
+
+#: static/js/scheduler/scheduler.js:163
+msgid "Years"
+msgstr "年"
+
+#: static/js/scheduler/scheduler.js:164
+msgid "of"
+msgstr "的"
+
+#: static/js/scheduler/scheduler.js:167
+msgid "end label"
+msgstr ""
+
+#: static/js/scheduler/scheduler.js:168
+msgid "Never end"
+msgstr "永远不结束"
+
+#: static/js/scheduler/scheduler.js:169
+msgid "Counter after"
+msgstr "几次"
+
+#: static/js/scheduler/scheduler.js:170
+msgid "Count ocurrence end"
+msgstr "几次后结束"
+
+#: static/js/scheduler/scheduler.js:171
+msgid "Am"
+msgstr "Am"
+
+#: static/js/scheduler/scheduler.js:174
+msgid "First"
+msgstr "第一"
+
+#: static/js/scheduler/scheduler.js:175
+msgid "Second"
+msgstr "第二"
+
+#: static/js/scheduler/scheduler.js:176
+msgid "Third"
+msgstr "第三"
+
+#: static/js/scheduler/scheduler.js:177
+msgid "Fourth"
+msgstr "第四"
+
+#: static/js/scheduler/scheduler.js:178
+msgid "Last"
+msgstr "最后"

@@ -1,0 +1,83 @@
+{% extends '_base.html' %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+{% block title %}
+    {% trans 'My Scheduler' %}
+{% endblock %}
+
+{% block pagecss %}
+    <link rel="stylesheet" href="{% static 'css/scheduler/view.css' %}">
+{% endblock %}
+
+{% block pagejs %}
+    <script type="text/javascript" src="{% static 'js/scheduler/category.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/scheduler/scheduler.js' %}"></script>
+{% endblock %}
+
+{% block main_content %}
+    <div class="row">
+        <div class="col-sm-3 col-md-2 category-sider">
+            <h4>{% trans 'Category' %}</h4>
+            <script type="text/x-kendo-template" id="category_template">
+                <div class="product-view k-widget" style="border-color:#:color#">
+                    <dl>
+                        <dt>{% trans 'Category' %}</dt>
+                        <dd>#:name#</dd>
+                        <dt>{% trans 'Owner' %}</dt>
+                        <dd>#:owner#</dd>
+                    </dl>
+                    <div class="edit-buttons">
+                        <a class="k-button k-edit-button" href="\\#"><span class="k-icon k-edit"></span></a>
+                        <a class="k-button k-delete-button" href="\\#"><span class="k-icon k-delete"></span></a>
+                    </div>
+                </div>
+            </script>
+            
+            <script type="text/x-kendo-tmpl" id="edit_category_template">
+                
+                <div class="product-view k-widget">
+                    
+                    <dl>
+                        <dt>{% trans 'Category Name' %}</dt>
+                        <dd>
+                            <input type="text" class="k-textbox" data-bind="value:name" name="name" required="required" validationMessage="required" />
+                            <span data-for="name" class="k-invalid-msg"></span>
+                        </dd>
+                        
+                        <dt>{% trans 'Color' %}</dt>
+                        <dd>
+                            <input class="k-textbox" data-bind="value:color" name="color"/>
+                        </dd>
+                    </dl>
+                    <div class="edit-buttons">
+                        <a class="k-button k-update-button" href="\\#"><span class="k-icon k-update"></span></a>
+                        <a class="k-button k-cancel-button" href="\\#"><span class="k-icon k-cancel"></span></a>
+                    </div>
+                </div>
+            </script>
+            
+            <a id="add_new_category" class="k-button k-button-icontext k-add-button" href="#"><span class="k-icon k-add"></span>{% trans 'Add new category' %}</a>
+            <input class="colorpicker"/>
+            
+            <div class="alert-danger" role="alert" style="display: none;margin-top:5px;" id="category_error">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">{% trans 'Error' %}:</span>
+                <span class="errormsg"></span>
+            </div>
+            <div id="category">
+                
+            </div>
+        </div>
+        <div class="col-sm-9 col-md-10 scheduler-wrapper">
+            <div class="alert-danger" role="alert" style="display: none;margin-top:5px;" id="scheduler_error">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">{% trans 'Error' %}:</span>
+                <span class="errormsg"></span>
+            </div>
+            <div id="scheduler">
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}

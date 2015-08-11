@@ -1,0 +1,32 @@
+{% extends '_base.html' %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+{% block title %}{% trans 'Money Manager' %}{% endblock %}
+
+{% block pagejs %}
+    <script type="text/javascript" src="{% static 'js/moneyer/moneyer.js' %}"></script>
+{% endblock %}
+
+{% block main_content %}
+    <div class="alert-danger" role="alert" style="display: none;margin-top:5px;" id="moneyer_error">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">{% trans 'Error' %}:</span>
+        <span class="errormsg"></span>
+    </div>
+
+    <div class="form-inline">
+        <div class="form-group">
+            <label for="from_date">{% trans 'From Date' %}:</label>
+            <input type="text" class="form-control datepicker" onchange="load_moneyer();" value="{{ from_date }}" id="from_date"/>
+        </div>
+        <div class="form-group">
+            <label for="from_date">{% trans 'To Date' %}:</label>
+            <input type="text" class="form-control datepicker" onchange="load_moneyer();" value="{{ to_date }}" id="to_date"/>
+        </div>
+    </div>
+    
+    <div id="moneyer">
+            
+    </div>
+{% endblock %}

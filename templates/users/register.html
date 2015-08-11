@@ -1,0 +1,74 @@
+{% extends '_base.html' %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+{% block title %}
+    {% trans 'Register' %}
+{% endblock %}
+
+{% block pagecss %}
+    <link rel="stylesheet" href="{% static 'css/users/register.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="body">
+        <nav class="navbar navbar-fixed-top navbar-inverse">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/home/">{% trans 'My Planr' %}</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/home/">{% trans 'Home' %}</a></li>
+                <li><a href="/account/">{% trans 'Planr Portal' %}</a></li>
+              </ul>
+            </div><!-- /.nav-collapse -->
+          </div><!-- /.container -->
+        </nav>
+        
+        <div class="container">
+            <form class="form-horizontal" method="post" action="/register_action/">
+                {% if Error %}
+                    <div class="alert alert-danger" role="alert">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">{% trans 'Error' %}:</span>
+                        {{ Error }}
+                    </div>
+                {% endif %}
+                
+                <div class="form-group">
+                  <label for="email" class="col-sm-2 control-label">{% trans 'Email'%}:</label>
+                  <div class="col-sm-10">
+                    <input type="email" name="email" class="form-control" id="email" placeholder="{% trans 'Email' %}">
+                  </div>
+                </div>
+               
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">{% trans 'Password' %}:</label>
+                  <div class="col-sm-10">
+                    <input type="password" name="password" class="form-control" id="password" placeholder="{% trans 'Password' %}">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="repeat_password" class="col-sm-2 control-label">{% trans 'Confirm Password' %}:</label>
+                  <div class="col-sm-10">
+                    <input type="password" name="rpassword" class="form-control" id="repeat_password" placeholder="{% trans 'Confirm Password' %}">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-success">{% trans 'Register' %}</button>
+                  </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

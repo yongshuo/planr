@@ -1,0 +1,16 @@
+.body{
+    background:url('../../images/background.PNG');
+    width:100%;
+    height: auto;
+    min-height: 100%;
+}
+
+.form-horizontal{
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size:15px;
+    color:white;
+    font-weight: bold;
+    padding-top:50px;
+}
