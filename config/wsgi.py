@@ -1,4 +1,3 @@
-#init file
 from django.core.handlers.wsgi import WSGIHandler
 import django
 import os, sys
