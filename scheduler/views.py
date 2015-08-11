@@ -304,7 +304,7 @@ def load_event_dashboard(request):
                     'start' : datetime.strftime(e.start_date,'%Y-%m-%d') if e.isAllDay else datetime.strftime(e.start_date_time.replace(tzinfo = settings.TZ_INFO) - timedelta(minutes = int(tz)), '%Y-%m-%d %I:%M %p'),
                     'end' : datetime.strftime(e.to_date,'%Y-%m-%d') if e.isAllDay else datetime.strftime(e.to_date_time.replace(tzinfo = settings.TZ_INFO) - timedelta(minutes = int(tz)), '%Y-%m-%d %I:%M %p'),
                     'description' : e.description.encode('utf-8'),
-                    'category' : str(e.category.name).encode('utf-8'),
+                    'category' : e.category.name.encode('utf-8'),
                 })
                 
         return_data['details'] = details
