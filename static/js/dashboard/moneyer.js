@@ -45,7 +45,8 @@ function load_pie_chart(){
                     position: "top"
                 },
                 chartArea: {
-                    background: ""
+                    background: "",
+		    width: $('div.main').width(),
                 },
                 seriesDefaults: {
                     type: "pie",
@@ -88,7 +89,8 @@ function load_line_chart(){
                     position: "top"
                 },
                 chartArea: {
-                    background: ""
+                    background: "",
+		    width: $('div.main').width(),
                 },
                 seriesDefaults: {
                     type: "line",
