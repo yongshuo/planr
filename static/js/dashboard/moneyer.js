@@ -52,12 +52,13 @@ function load_pie_chart(){
                     labels: {
                         visible: true,
                         background: "transparent",
-                        template: "#= category #: \n #= value#%"
+                        template: "#= category # - #= kendo.format('{0:P}', percentage)#",
+                        position: "outsideEnd",
                     }
                 },
                 tooltip: {
                     visible: true,
-                    format: "{0}%"
+                    template:  "#= category # - #= kendo.format('{0:P}', percentage) #"
                 }
             });
         }
