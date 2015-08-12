@@ -220,7 +220,7 @@ def load_dashboard_pie(request):
     new_data = []
     for d in details:
         new_data.append({
-            'value' : str(round((d['value'] / total_amount), 2)),
+            'value' : str(round((d['value'] / total_amount), 2) * 100),
             'category' : d['category'],
             'color' : d['color'],
         })
