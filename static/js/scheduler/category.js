@@ -1,24 +1,3 @@
-$(document).ready(function(e){
-    load_category();
-    load_scheduler();
-    
-    $('.colorpicker').kendoColorPicker({
-        value: '#47f900',
-        buttons: false,
-    });
-    
-    set_add_action();
-});
-
-function set_add_action(){
-    var list_view = $('#category').data('kendoListView');
-    
-    $('#add_new_category').click(function(e) {
-        list_view.add();
-        e.preventDefault();
-    });
-}
-
 function load_category_datasource(){
     var dataSource = new kendo.data.DataSource({
         transport: {
@@ -55,7 +34,6 @@ function load_category_datasource(){
                 fields: {
                     name: "name",
                     color: "color",
-                    owner : 'owner'
                 }
             },
             

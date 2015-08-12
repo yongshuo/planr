@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-12 00:26+0800\n"
+"POT-Creation-Date: 2015-08-12 22:38+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1122,63 +1122,95 @@ msgid "Other"
 msgstr "其他"
 
 #: templates/_base.html:6
-msgid "Planner"
-msgstr "计划表"
+msgid "Planner | Make your planning easier"
+msgstr "让您的计划更容易"
 
-#: templates/_base.html:55 templates/users/home.html:6
-#: templates/users/home.html.py:48 templates/users/login.html:24
-#: templates/users/register.html:24
+#: templates/_base.html:9
+msgid ""
+"Planr is a web-based planning appication which can help user to planning "
+"their stuffs, such as schedule, budget, project plans."
+msgstr ""
+
+#: templates/_base.html:10
+msgid "Planning,Schedule,Budget,Gantter,Open Source,Free,Web-based"
+msgstr ""
+
+#: templates/_base.html:61 templates/users/home.html:6
+#: templates/users/home.html.py:53 templates/users/login.html:29
+#: templates/users/register.html:29
 msgid "My Planr"
 msgstr "我的计划表"
 
-#: templates/_base.html:60
+#: templates/_base.html:66
 msgid "Welcome"
 msgstr "欢迎"
 
-#: templates/_base.html:61
+#: templates/_base.html:67
 msgid "Logout"
 msgstr "登出"
 
-#: templates/_base.html:75 templates/dashboard/dashboard.html:7
+#: templates/_base.html:81 templates/dashboard/dashboard.html:7
 msgid "Dashboard"
 msgstr "仪表盘"
 
-#: templates/_base.html:81 templates/users/account.html:5
+#: templates/_base.html:87 templates/users/account.html:5
 msgid "Account"
 msgstr "账户"
 
-#: templates/_base.html:87
+#: templates/_base.html:93
 msgid "Scheduler"
 msgstr "调度"
 
-#: templates/_base.html:93 templates/moneyer/moneyer.html:5
+#: templates/_base.html:99 templates/moneyer/moneyer.html:5
 msgid "Money Manager"
 msgstr "金钱管理"
 
-#: templates/_base.html:99
+#: templates/_base.html:105
 msgid "Project Planr"
 msgstr "项目计划"
 
-#: templates/dashboard/dashboard.html:18
+#: templates/dashboard/dashboard.html:11
+msgid "Planr has a dashboard which can help you to view your planning."
+msgstr ""
+
+#: templates/dashboard/dashboard.html:12
+msgid ""
+"Planning,Schedule,Budget,Gantter,Open Source,Free,Web-based,Multi-Language, "
+"dashboard"
+msgstr ""
+
+#: templates/dashboard/dashboard.html:23
 msgid "Today Events"
 msgstr "今天的事件"
 
-#: templates/dashboard/dashboard.html:19
+#: templates/dashboard/dashboard.html:24
 msgid "My Money"
 msgstr "我的资金"
 
-#: templates/dashboard/dashboard.html:25 templates/dashboard/dashboard.html:35
-#: templates/moneyer/moneyer.html:14 templates/scheduler/scheduler.html:65
-#: templates/scheduler/scheduler.html:75 templates/users/account.html:19
-#: templates/users/login.html:47 templates/users/register.html:40
+#: templates/dashboard/dashboard.html:30 templates/dashboard/dashboard.html:40
+#: templates/moneyer/moneyer.html:19 templates/scheduler/scheduler.html:27
+#: templates/users/account.html:24 templates/users/login.html:52
+#: templates/users/register.html:45
 msgid "Error"
 msgstr "错误"
 
-#: templates/moneyer/moneyer.html:20
+#: templates/moneyer/moneyer.html:8
+msgid ""
+"In planr, you can manage your income and spense, you can trace back how your "
+"money flow from here."
+msgstr ""
+
+#: templates/moneyer/moneyer.html:9
+msgid ""
+"Planning,Schedule,Budget,Gantter,Open Source,Free,Web-based, Money Manager, "
+"Multi-Language"
+msgstr ""
+
+#: templates/moneyer/moneyer.html:25
 msgid "From Date"
 msgstr "从"
 
-#: templates/moneyer/moneyer.html:24
+#: templates/moneyer/moneyer.html:29
 msgid "To Date"
 msgstr "到"
 
@@ -1186,78 +1218,98 @@ msgstr "到"
 msgid "My Scheduler"
 msgstr "调度"
 
-#: templates/scheduler/scheduler.html:21 templates/scheduler/scheduler.html:25
-msgid "Category"
-msgstr "类别"
+#: templates/scheduler/scheduler.html:10
+msgid "In planr, you can schedule a event"
+msgstr ""
 
-#: templates/scheduler/scheduler.html:27
-msgid "Owner"
-msgstr "所有者"
+#: templates/scheduler/scheduler.html:11
+msgid ""
+"Planning,Schedule,Budget,Gantter,Open Source,Free,Web-based, Multi-Language"
+msgstr ""
 
-#: templates/scheduler/scheduler.html:42
-msgid "Category Name"
-msgstr "类别名"
+#: templates/users/account.html:8
+msgid "In planr, you can modify your name and password."
+msgstr ""
 
-#: templates/scheduler/scheduler.html:48
-msgid "Color"
-msgstr "颜色"
+#: templates/users/account.html:9 templates/users/home.html:11
+#: templates/users/register.html:11
+msgid ""
+"Planning,Schedule,Budget,Gantter,Open Source,Free,Web-based, Account, Multi-"
+"Language"
+msgstr ""
 
-#: templates/scheduler/scheduler.html:60
-msgid "Add new category"
-msgstr "添加新的类别"
-
-#: templates/users/account.html:12 templates/users/login.html:40
+#: templates/users/account.html:17 templates/users/login.html:45
 msgid "Success"
 msgstr "成功"
 
-#: templates/users/account.html:25 templates/users/account.html.py:27
-#: templates/users/login.html:54 templates/users/login.html.py:56
-#: templates/users/register.html:46 templates/users/register.html.py:48
+#: templates/users/account.html:30 templates/users/account.html.py:32
+#: templates/users/login.html:59 templates/users/login.html.py:61
+#: templates/users/register.html:51 templates/users/register.html.py:53
 msgid "Email"
 msgstr "邮箱"
 
-#: templates/users/account.html:32 templates/users/account.html.py:34
+#: templates/users/account.html:37 templates/users/account.html.py:39
 msgid "Full Name"
 msgstr "姓名"
 
-#: templates/users/account.html:40 templates/users/account.html.py:42
-#: templates/users/login.html:61 templates/users/login.html.py:63
-#: templates/users/register.html:53 templates/users/register.html.py:55
+#: templates/users/account.html:45 templates/users/account.html.py:47
+#: templates/users/login.html:66 templates/users/login.html.py:68
+#: templates/users/register.html:58 templates/users/register.html.py:60
 msgid "Password"
 msgstr "密码"
 
-#: templates/users/account.html:47
+#: templates/users/account.html:52
 msgid "Update Details"
 msgstr "更新详情"
 
-#: templates/users/home.html:52 templates/users/login.html:28
-#: templates/users/register.html:28
+#: templates/users/home.html:10
+msgid ""
+"Planr is a web-based applicatin. You can use it to plan your budget, "
+"schedule, etc"
+msgstr ""
+
+#: templates/users/home.html:57 templates/users/login.html:33
+#: templates/users/register.html:33
 msgid "Home"
 msgstr "主页"
 
-#: templates/users/home.html:53 templates/users/login.html:29
-#: templates/users/register.html:29
+#: templates/users/home.html:58 templates/users/login.html:34
+#: templates/users/register.html:34
 msgid "Planr Portal"
 msgstr "我的门户"
 
-#: templates/users/home.html:60
+#: templates/users/home.html:65
 msgid "Make your planning easy"
 msgstr "让您的计划更容易"
 
-#: templates/users/home.html:61
+#: templates/users/home.html:66
 msgid "Start Now"
 msgstr "现在注册"
 
-#: templates/users/home.html:63 templates/users/login.html:6
-#: templates/users/login.html.py:70
+#: templates/users/home.html:68 templates/users/login.html:6
+#: templates/users/login.html.py:75
 msgid "Login"
 msgstr "登陆"
 
-#: templates/users/register.html:6 templates/users/register.html.py:68
+#: templates/users/login.html:10
+msgid "Enter your username and password to start using planr."
+msgstr ""
+
+#: templates/users/login.html:11
+msgid ""
+"Planning,Schedule,Budget,Gantter,Open Source,Free,Web-based, Account, Multi-"
+"Language, Login"
+msgstr ""
+
+#: templates/users/register.html:6 templates/users/register.html.py:73
 msgid "Register"
 msgstr "注册"
 
-#: templates/users/register.html:60 templates/users/register.html.py:62
+#: templates/users/register.html:10
+msgid "Register a free account, you can use this application anywhere."
+msgstr ""
+
+#: templates/users/register.html:65 templates/users/register.html.py:67
 msgid "Confirm Password"
 msgstr "确认密码"
 
@@ -1273,30 +1325,48 @@ msgstr "未激活"
 msgid "Deleted"
 msgstr "已删除"
 
-#: users/views.py:68 users/views.py:120
+#: users/views.py:69 users/views.py:121
 msgid "Please provide email !"
 msgstr "请输入邮箱地址!"
 
-#: users/views.py:72 users/views.py:124
+#: users/views.py:73 users/views.py:125
 msgid "Please provide password !"
 msgstr "请输入密码!"
 
-#: users/views.py:76
+#: users/views.py:77
 msgid "Password does not match !"
 msgstr "密码不匹配!"
 
-#: users/views.py:89
+#: users/views.py:90
 msgid "Register successfully! you can login now ."
 msgstr "邮箱已经存在，请选择新的邮箱!"
 
-#: users/views.py:93
+#: users/views.py:94
 msgid "Email already in use, please choose another one !"
 msgstr ""
 
-#: users/views.py:130 users/views.py:135
+#: users/views.py:131 users/views.py:136
 msgid "Login failed, invalid email or password!"
 msgstr "登陆失败，错误的邮箱或密码!"
 
-#: users/views.py:205
+#: users/views.py:206
 msgid "Account details updated successfully!"
 msgstr "账户信息更新成功!"
+
+#~ msgid "Planner"
+#~ msgstr "计划表"
+
+#~ msgid "Category"
+#~ msgstr "类别"
+
+#~ msgid "Owner"
+#~ msgstr "所有者"
+
+#~ msgid "Category Name"
+#~ msgstr "类别名"
+
+#~ msgid "Color"
+#~ msgstr "颜色"
+
+#~ msgid "Add new category"
+#~ msgstr "添加新的类别"

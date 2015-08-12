@@ -1,17 +1,37 @@
+$(document).ready(function(e){
+    load_scheduler(); 
+});
+
 var G_timezone_offset = new Date().getTimezoneOffset();
 
 function load_scheduler(){
     
+    var selected_view = 'agenda';
+    
     if ($("#scheduler").data("kendoScheduler") ){
+        selected_view = $("#scheduler").data("kendoScheduler").view().title;
         
         $("#scheduler").data("kendoScheduler").destroy();
-        
-        $('#scheduler').find('.k-header').hide();
-        
+        $('#scheduler').find('.k-header').remove();
     }
     
     var dataSource = load_category_datasource();
     
+    var agenda_selected = false;
+    var month_selected = false;
+    var day_selected = false;
+    var week_selected = false;
+    
+    
+    if (selected_view == "day" || selected_view == "天" ) {
+        day_selected = true;
+    }else if (selected_view == "month" || selected_view == "月") {
+        month_selected = true;
+    }else if (selected_view == "week" || selected_view == "周") {
+        week_selected = true;
+    }else{
+        agenda_selected = true;
+    }
     
     $("#scheduler").kendoScheduler({
         date : new Date(),
@@ -19,10 +39,10 @@ function load_scheduler(){
         startTime: new Date(new Date().getFullYear(), new Date().getMonth(),new Date().getDate(),7, 0, 0, 0),
         height: 550,
         views: [
-            "day",
-            "week",
-            "month",
-            {type : "agenda", selected : true},
+            {type : "day", selected:day_selected, allDaySlot:false},
+            {type : "week",selected: week_selected, allDaySlot:true},
+            {type : "month",selected : month_selected},
+            {type : "agenda", selected : agenda_selected},
         ],
         dataSource: {
             batch: true,
@@ -81,7 +101,9 @@ function load_scheduler(){
                 $('#scheduler_error').show();
             },
             change: function (e) {
-                
+                if (e.action == 'sync') {
+                    load_scheduler();
+                }
             },
             requestStart: function (e) {
                 $('#scheduler_error').hide();
@@ -179,23 +201,5 @@ function load_scheduler(){
                 }
             }
         }
-    });
-    
-    var scheduler = $("#scheduler").data("kendoScheduler");
-                    
-        scheduler.wrapper.on("mouseup touchend", ".k-scheduler-table td, .k-event", function(e) {
-      var target = $(e.currentTarget);
-      
-      if (target.hasClass("k-event")) {
-        var event = scheduler.occurrenceByUid(target.data("uid"));
-        scheduler.editEvent(event);
-      } else {
-        var slot = scheduler.slotByElement(target[0]);
-
-        scheduler.addEvent({
-          start: slot.startDate,
-          end: slot.endDate
-        });
-      }
     });
 }

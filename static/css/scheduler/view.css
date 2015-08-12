@@ -89,11 +89,6 @@ span.k-invalid-msg
     }
 }
 
-.scheduler-wrapper{
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-}
-
-#scheduler{
-    margin-top:10px;
+.k-scheduler-footer{
+    display: none;
 }

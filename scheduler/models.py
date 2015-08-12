@@ -4,8 +4,8 @@ from users.models import EntityLogin
 
 
 class Category(models.Model):
-    owner = models.ForeignKey(EntityLogin, null = True, blank = True)
     name = models.TextField('Category Name', null = True, blank = True)
+    name_zhcn = models.TextField('Category Name (ZHCN)', null = True, blank = True)
     color = models.CharField('Category color', max_length = 64, null = True, blank = True)
     
     class Meta:
@@ -13,13 +13,14 @@ class Category(models.Model):
         db_table = 'scheduler_category'
         
     def __unicode__(self):
-        return '%s %s' % (self.owner.full_name, self.name)
+        return self.name
     
     
 class Event(models.Model):
     
     category = models.ForeignKey(Category, null = True, blank = True)
     
+    owner = models.ForeignKey(EntityLogin, null = True, blank = True)
     title = models.TextField('Title', null = True, blank = True)
     start_date = models.DateField('Start Date', null = True, blank = True, help_text = 'Blank if not all day event')
     start_date_time = models.DateTimeField('Start Time', null = True, blank = True)

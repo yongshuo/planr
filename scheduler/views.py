@@ -29,24 +29,19 @@ def load_category_ajax(request):
     
     if request.session.has_key('EMAIL') == False:
         return redirect('/login/')
-    try:
-        entity_login = EntityLogin.objects.get(email = request.session['EMAIL'])
-    except Exception as e:
-        raise Exception(e.args[0])
-    else:
-        category = Category.objects.filter(owner = entity_login).order_by('-id')
-    
-        for c in category:
-            details.append({
-                'owner' : entity_login.email,
-                'categoryId' : str(c.id),
-                'name' : c.name,
-                'color' : c.color,
-                'value':str(c.id),
-                'text':c.name,
-            })
-    
-        return_data['details'] = details
+   
+    category = Category.objects.all().order_by('-id')
+
+    for c in category:
+        details.append({
+            'categoryId' : str(c.id),
+            'name' : c.name if request.LANGUAGE_CODE != 'zh-hans' else c.name_zhcn.encode('utf-8'),
+            'color' : c.color,
+            'value':str(c.id),
+            'text':c.name if request.LANGUAGE_CODE != 'zh-hans' else c.name_zhcn.encode('utf-8'),
+        })
+
+    return_data['details'] = details
         
     return HttpResponse(json.dumps(return_data), content_type = 'application/json')
 
@@ -137,18 +132,16 @@ def load_events_ajax(request):
     except Exception as e:
         raise Exception(e.args[0])
     else:
-        category = Category.objects.filter(owner = entity_login)
+        category = Category.objects.all()
         
         for c in category:
-            events = Event.objects.filter(category = c)
+            events = Event.objects.filter(category = c, owner = entity_login)
             for e in events:
                 details.append({
                     'eventId' : str(e.id),
                     'title' : e.title,
                     'start' : datetime.strftime(e.start_date,'%Y-%m-%d') if e.isAllDay else datetime.strftime(e.start_date_time.replace(tzinfo = settings.TZ_INFO) - timedelta(minutes = int(data_dict['tz'])), '%Y-%m-%d %I:%M %p'),
                     'end' : datetime.strftime(e.to_date,'%Y-%m-%d') if e.isAllDay else datetime.strftime(e.to_date_time.replace(tzinfo = settings.TZ_INFO) - timedelta(minutes = int(data_dict['tz'])), '%Y-%m-%d %I:%M %p'),
-                    #'start_timezone' : e.start_time_zone,
-                    #'end_timezone' : e.end_time_zone,
                     'description' : e.description,
                     'recurrenceID' : e.recurrenceID,
                     'recurrenceRule' : e.recurrenceRule,
@@ -174,7 +167,6 @@ def create_events_ajax(request):
     data =  ast.literal_eval(models)
     data_dict = data[-1]
     
-    
     try:
         category = Category.objects.get(id = int(data_dict['categoryId']))
     except Exception as e:
@@ -189,12 +181,16 @@ def create_events_ajax(request):
             end_date_time = datetime.strptime(data_dict['end'], '%Y-%m-%dT%H:%M:00.000Z') - timedelta(minutes = int(tz))
             start_date, end_date = None, None
         
-        
-        event = Event(category = category, title = data_dict['title'], start_date = start_date,
+        try:
+            entity_login = EntityLogin.objects.get(email = request.session['EMAIL'])
+        except Exception as e:
+            raise Exception(e.args[0])
+        else:    
+            event = Event(category = category, title = data_dict['title'], start_date = start_date,
                       start_date_time = start_date_time, to_date = end_date, to_date_time = end_date_time,
                       recurrenceID = data_dict['recurrenceID'], recurrenceRule = data_dict['recurrenceRule'],
                       recurrenceException = data_dict['recurrenceException'], isAllDay = data_dict['isAllDay'],
-                      description = data_dict['description'])
+                      description = data_dict['description'], owner = entity_login)
         
         event.save()
         
@@ -286,10 +282,10 @@ def load_event_dashboard(request):
     except Exception as e:
         raise Exception(e.args[0])
     else:
-        category = Category.objects.filter(owner = entity_login)
+        category = Category.objects.all()
         
         for c in category:
-            events = Event.objects.filter(category = c)
+            events = Event.objects.filter(category = c, owner = entity_login)
             for e in events:
                 
                 if e.isAllDay == True and datetime.strftime(e.start_date, '%d/%m/%Y') != datetime.strftime(datetime.today(), '%d/%m/%Y'):
@@ -304,7 +300,7 @@ def load_event_dashboard(request):
                     'start' : datetime.strftime(e.start_date,'%Y-%m-%d') if e.isAllDay else datetime.strftime(e.start_date_time.replace(tzinfo = settings.TZ_INFO) - timedelta(minutes = int(tz)), '%Y-%m-%d %I:%M %p'),
                     'end' : datetime.strftime(e.to_date,'%Y-%m-%d') if e.isAllDay else datetime.strftime(e.to_date_time.replace(tzinfo = settings.TZ_INFO) - timedelta(minutes = int(tz)), '%Y-%m-%d %I:%M %p'),
                     'description' : e.description.encode('utf-8'),
-                    'category' : e.category.name.encode('utf-8'),
+                    'category' : e.category.name.encode('utf-8')  if request.LANGUAGE_CODE != 'zh-hans' else e.category.name_zhcn.encode('utf-8'),
                 })
                 
         return_data['details'] = details
