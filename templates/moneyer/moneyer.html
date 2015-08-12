@@ -4,6 +4,11 @@
 
 {% block title %}{% trans 'Money Manager' %}{% endblock %}
 
+{% block seo %}
+        <meta name="description" content="{% trans 'In planr, you can manage your income and spense, you can trace back how your money flow from here.' %}">
+        <meta name="keywords" content="{% trans 'Planning,Schedule,Budget,Gantter,Open Source,Free,Web-based, Money Manager, Multi-Language' %}">
+{% endblock %}
+
 {% block pagejs %}
     <script type="text/javascript" src="{% static 'js/moneyer/moneyer.js' %}"></script>
 {% endblock %}

@@ -6,6 +6,11 @@
     {% trans 'My Scheduler' %}
 {% endblock %}
 
+{% block seo %}
+        <meta name="description" content="{% trans 'In planr, you can schedule a event' %}">
+        <meta name="keywords" content="{% trans 'Planning,Schedule,Budget,Gantter,Open Source,Free,Web-based, Multi-Language' %}">
+{% endblock %}
+
 {% block pagecss %}
     <link rel="stylesheet" href="{% static 'css/scheduler/view.css' %}">
 {% endblock %}

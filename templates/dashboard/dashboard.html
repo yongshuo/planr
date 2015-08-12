@@ -7,6 +7,11 @@
     {% trans 'Dashboard' %}
 {% endblock %}
 
+{% block seo %}
+        <meta name="description" content="{% trans 'Planr has a dashboard which can help you to view your planning.' %}">
+        <meta name="keywords" content="{% trans 'Planning,Schedule,Budget,Gantter,Open Source,Free,Web-based,Multi-Language, dashboard' %}">
+{% endblock %}
+
 {% block pagejs %}
     <script type="text/javascript" src="{% static 'js/dashboard/scheduler.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/dashboard/moneyer.js' %}"></script>

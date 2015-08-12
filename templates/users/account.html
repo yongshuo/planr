@@ -4,6 +4,11 @@
 
 {% block title %}{% trans 'Account' %}{% endblock %}
 
+{% block seo %}
+	<meta name="description" content="{% trans 'In planr, you can modify your name and password.' %}">
+	<meta name="keywords" content="{% trans 'Planning,Schedule,Budget,Gantter,Open Source,Free,Web-based, Account, Multi-Language' %}">
+{% endblock %}
+
 {% block main_content %}
     <form class="form-horizontal" method="post" action="/update_account/">
         {% if SuccessMsg %}
