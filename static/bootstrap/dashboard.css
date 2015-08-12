@@ -97,6 +97,9 @@ body {
   border-radius: 50%;
 }
 
+#languageWrapper{
+	z-index:999;
+}
 #language{
   position: fixed;
   right:5px;
@@ -110,3 +113,9 @@ body {
   background-color:green;
   color:white;
 }
+
+#mover{
+	cursor:move;
+}
+
+

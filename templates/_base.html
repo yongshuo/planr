@@ -119,11 +119,14 @@
         </div>
     {% endblock %}
     <input type="hidden" id="lang_code" value="{{ request.LANGUAGE_CODE }}" />
+    <div id="languageWrapper">
     <div id="language">
         <div class="btn-group" role="group">
             <button type="button" {% if request.LANGUAGE_CODE != 'zh-hans'%} class="btn btn-default active"{% else %}class="btn btn-default"{% endif %} onclick="change_language('en');">EN</button>
-            <button type="button" {% if request.LANGUAGE_CODE == 'zh-hans'%} class="btn btn-default active"{% else %}class="btn btn-default"{% endif %} onclick="change_language('zh-hans');">中文</button>
+            <button type="button" id="mover" class="btn btn-link"><span class="glyphicon glyphicon-move" aria-hidden="true"></span>&nbsp;</button>
+	    <button type="button" {% if request.LANGUAGE_CODE == 'zh-hans'%} class="btn btn-default active"{% else %}class="btn btn-default"{% endif %} onclick="change_language('zh-hans');">中文</button>
         </div>
+    </div>
     </div>
     </body>
 </html>
