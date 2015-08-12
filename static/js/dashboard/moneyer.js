@@ -42,7 +42,7 @@ function load_pie_chart(){
                     text: gettext("Your money category PIE chart")
                 },
                 legend: {
-                    visible: false
+                    position: "top"
                 },
                 chartArea: {
                     background: ""
