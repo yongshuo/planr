@@ -212,20 +212,12 @@ def load_dashboard_pie(request):
                 total_amount += m.debit
             
             details.append({
-                'value' : amount,
+                'value' : str(amount),
                 'category' : c[1].encode('UTF-8'),
                 'color' : '#%02X%02X%02X' % (r(),r(),r())
             })
     
-    new_data = []
-    for d in details:
-        new_data.append({
-            'value' : str(round((d['value'] / total_amount), 2) * 100),
-            'category' : d['category'],
-            'color' : d['color'],
-        })
-    
-    return_data = {'details' : new_data}
+    return_data = {'details' : details}
     
     return HttpResponse(json.dumps(return_data), content_type = 'application/json')
     
