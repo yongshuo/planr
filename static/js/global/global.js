@@ -27,6 +27,9 @@ function desktop_or_mobile(){
     }else{
 	device = 'desktop';
     }
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ 	device = 'phone';
+    }
     console.log(device);
 }
 
