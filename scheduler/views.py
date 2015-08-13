@@ -140,8 +140,8 @@ def load_events_ajax(request):
                 details.append({
                     'eventId' : str(e.id),
                     'title' : e.title,
-                    'start' : datetime.strftime(e.start_date,'%Y-%m-%d') if e.isAllDay else datetime.strftime(e.start_date_time.replace(tzinfo = settings.TZ_INFO) - timedelta(minutes = int(data_dict['tz'])), '%Y-%m-%d %I:%M %p'),
-                    'end' : datetime.strftime(e.to_date,'%Y-%m-%d') if e.isAllDay else datetime.strftime(e.to_date_time.replace(tzinfo = settings.TZ_INFO) - timedelta(minutes = int(data_dict['tz'])), '%Y-%m-%d %I:%M %p'),
+                    'start' : datetime.strftime(e.start_date,'%Y-%m-%d') if e.isAllDay else datetime.strftime(e.start_date_time.replace(tzinfo = settings.TZ_INFO) - timedelta(minutes = int(data_dict['tz'])), '%Y-%m-%d %H:%M'),
+                    'end' : datetime.strftime(e.to_date,'%Y-%m-%d') if e.isAllDay else datetime.strftime(e.to_date_time.replace(tzinfo = settings.TZ_INFO) - timedelta(minutes = int(data_dict['tz'])), '%Y-%m-%d %H:%M'),
                     'description' : e.description,
                     'recurrenceID' : e.recurrenceID,
                     'recurrenceRule' : e.recurrenceRule,
