@@ -79,6 +79,7 @@ function load_moneyer(){
         pageable: false,
         height: 550,
         toolbar: [{name:"create", text: gettext("Add a record")}],
+	mobile: device,
         columns: [
             { field: "category", title: gettext("Category"), width: "200px", editor: categoryDropDownEditor, template: "#=category.categoryName#" },
             { field: "credit", footerTemplate:"#= kendo.toString(sum, 'C') # ",title:gettext("Credit"), format: "{0:c}",type: "number", width: "150px" },
@@ -105,7 +106,7 @@ function load_moneyer(){
             },
             
         ],
-        editable: "inline",
+        editable: "popup",
     });
     
 }

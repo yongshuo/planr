@@ -6,7 +6,9 @@
 body {
   padding-top: 50px;
 }
-
+.main{
+    margin-top:20px;
+}
 
 /*
  * Global add-ons
@@ -70,10 +72,10 @@ body {
  */
 
 .main {
-  padding: 20px;
+ 
 }
 
-.main .page-header {
+.main .page-header {i
   margin-top: 0;
 }
 

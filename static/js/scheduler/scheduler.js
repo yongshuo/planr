@@ -5,7 +5,6 @@ $(document).ready(function(e){
 var G_timezone_offset = new Date().getTimezoneOffset();
 
 function load_scheduler(){
-    
     var selected_view = 'agenda';
     
     if ($("#scheduler").data("kendoScheduler") ){
@@ -38,6 +37,7 @@ function load_scheduler(){
         startDate: new Date(),
         startTime: new Date(new Date().getFullYear(), new Date().getMonth(),new Date().getDate(),7, 0, 0, 0),
         height: 550,
+	mobile: device,
         views: [
             {type : "day", selected:day_selected, allDaySlot:false},
             {type : "week",selected: week_selected, allDaySlot:true},

@@ -1,3 +1,5 @@
+var device = 'desktop';
+
 $(document).ready(function(e){
     var lang_code = $('#lang_code').val();
     
@@ -11,7 +13,23 @@ $(document).ready(function(e){
     
     $('.datepicker').kendoDatePicker({
     });
+
+    desktop_or_mobile();
 })
+
+$(window).bind("resize", function(e){
+    desktop_or_mobile();
+});
+
+function desktop_or_mobile(){
+    if ($(window).width() <= 767){
+        device = 'phone';
+    }else{
+	device = 'desktop';
+    }
+    console.log(device);
+}
+
 
 function change_language(language){
     $.ajax({
