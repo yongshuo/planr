@@ -67,6 +67,13 @@
                             <li><a href="#">{% trans 'Welcome' %} {{ EMAIL }}</a></li>
                             <li><a href="/logout/">{% trans 'Logout' %}</a></li>
                         {% endif %}
+                        <li {% if request.LANGUAGE_CODE != 'zh-hans'%} class="active"{% endif %}>
+                        	<a href="javascript:change_language('en');">EN</a>
+                        </li>
+                        <li {% if request.LANGUAGE_CODE == 'zh-hans'%} class="active"{% endif %}>
+                        	<a href="javascript:change_language('zh-hans');">中文</a>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>
@@ -120,6 +127,7 @@
         </div>
     {% endblock %}
     <input type="hidden" id="lang_code" value="{{ request.LANGUAGE_CODE }}" />
+    <!--
     <div id="languageWrapper">
     <div id="language">
         <div class="btn-group" role="group">
@@ -129,5 +137,6 @@
         </div>
     </div>
     </div>
+    -->
     </body>
 </html>
