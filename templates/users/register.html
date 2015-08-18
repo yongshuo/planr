@@ -33,6 +33,19 @@
                 <li class="active"><a href="/home/">{% trans 'Home' %}</a></li>
                 <li><a href="/dashboard/">{% trans 'Planr Portal' %}</a></li>
               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                    {% if EMAIL %}
+                        <li><a href="#">{% trans 'Welcome' %} {{ EMAIL }}</a></li>
+                        <li><a href="/logout/">{% trans 'Logout' %}</a></li>
+                    {% endif %}
+                    <li {% if request.LANGUAGE_CODE != 'zh-hans'%} class="active"{% endif %}>
+                    	<a href="javascript:change_language('en');">EN</a>
+                    </li>
+                    <li {% if request.LANGUAGE_CODE == 'zh-hans'%} class="active"{% endif %}>
+                    	<a href="javascript:change_language('zh-hans');">中文</a>
+                    </li>
+                    
+                </ul>
             </div><!-- /.nav-collapse -->
           </div><!-- /.container -->
         </nav>
