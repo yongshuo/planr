@@ -5,10 +5,10 @@ $(document).ready(function(e){
     
     if (lang_code == 'zh-hans') {
         console.log(lang_code);
-        //kendo.culture('zh-CN');
+        kendo.culture('zh-CN');
     }else{
         console.log(lang_code);
-        //kendo.culture('en-US');
+        kendo.culture('en-US');
     }
     
     $('.datepicker').kendoDatePicker({
